@@ -4062,7 +4062,7 @@ vertical-align: -.125em;
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./contact.qmd"> 
+    <a class="nav-link" href="https://thomaselove.github.io/431-2026/contact.html"> 
 <span class="menu-text">Contact Us</span></a>
   </li>  
   <li class="nav-item">
@@ -4221,12 +4221,12 @@ vertical-align: -.125em;
 <h2 data-number="1.3" class="anchored" data-anchor-id="general-project-a-rules"><span class="header-section-number">1.3</span> General Project A Rules</h2>
 <ol type="1">
 <li>You can work alone, or with one other person on Project A.</li>
-<li>There is a required Project A Quarto template that you will use to build your Project A report. Details on the template are <a href="#the-project-a-template">found here</a>.</li>
+<li>There is a required <a href="https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd">Project A Quarto template</a> that you will use to build your Project A report. Details on the template are <a href="#the-project-a-template">found here</a>.</li>
 <li>When you have problems on Project A, review these instructions and the other course materials, but also <a href="https://thomaselove.github.io/431-2026/contact.html">ask us for help</a>. Please don’t punish yourself by waiting to talk with us.</li>
-<li>Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see <a href="#section-16.-ai-usage-and-references">here</a>), so keep track of what you use.</li>
+<li>Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see <a href="#section-15.-ai-usage">here</a>), so keep track of what you use.</li>
 <li>Be sure to use spell check (just hit F7) on your Quarto file before rendering it, and review the HTML result carefully to ensure that no residual warnings or error messages remain in the document before you submit your work. We’ve provided a <a href="#report-checklist-before-submission">checklist for the report</a> which you should go through before you submit it.</li>
 <li>There should be no reference to statistical significance (or use of the word “significant”) anywhere in your Project A. You should never use the notion of statistical significance in any context, ever<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
-<li>Read the footnotes provided in these instructions<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>Read the footnotes provided in these instructions<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</li>
 </ol>
 </section>
 <section id="your-deliverables" class="level2" data-number="1.4">
@@ -4240,7 +4240,7 @@ vertical-align: -.125em;
 <li>The main submission for Project A has four parts. These are due in mid-October on the date specified in the Course <a href="https://thomaselove.github.io/431-2026/calendar.html">Calendar</a>.
 <ol type="1">
 <li>Your project A master <strong>data set</strong>, saved as an .Rds file.</li>
-<li>A detailed <strong>report</strong>, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template we have provided.</li>
+<li>A detailed <strong>report</strong>, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template <a href="https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd">we have provided</a>.</li>
 <li>A 3-minute recorded <strong>video</strong> presentation which highlights some key findings from your report (details can be <a href="#the-highlight-video">found here</a>), and</li>
 <li>A <strong>self-evaluation</strong> form, which you’ll complete after submitting the other three elements to Canvas. Details on the form <a href="#the-self-evaluation">are found here</a>.</li>
 </ol></li>
@@ -4313,7 +4313,7 @@ Tip
 </div>
 <section id="data-management-tasks" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="data-management-tasks"><span class="header-section-number">3.1</span> Data Management Tasks</h2>
-<p>Using the Quarto template for Project A, you will complete the following tasks.</p>
+<p>Using the <a href="https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd">Quarto template for Project A</a> we provide on our <a href="https://github.com/THOMASELOVE/431-data">431-data page</a>, you will complete the following tasks.</p>
 <p><strong>Task A</strong>. Ingest the data from each workbook (File 1 = main 4 states, File 2 = additional 8 states) properly into a separate tibble in R using tools from <a href="https://readxl.tidyverse.org/">the readxl package</a>, while accounting for missing values<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <ul>
 <li>I encourage you to name these tibbles <strong>projA_1</strong> and <strong>projA_2</strong>, respectively.</li>
@@ -4364,7 +4364,12 @@ Note
 <li><code>cost_g</code> is “High” is the <code>housing</code> value is above 15</li>
 <li>Ensure that these values are in the order “Low”, then “Mid”, then “High” when you run <code>tabyl()</code> on the <code>cost_g</code> variable.</li>
 </ul>
-<p><strong>Task H</strong>. Print the <strong>projA_master</strong> tibble by simply typing in its name. - Verify that only 10 rows are printed. - The tibble should contain 18 variables: the original 16 plus the two (<code>cost_g</code> and <code>food_g</code>) that you created. - The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the <a href="#file-2-other-eight-states">appropriate number of rows</a> for the counties from your two selected states.)</p>
+<p><strong>Task H</strong>. Print the <strong>projA_master</strong> tibble by simply typing in its name.</p>
+<ul>
+<li>Verify that only 10 rows are printed.</li>
+<li>The tibble should contain 15 variables: the original 14 plus the <code>cost_g</code> factor you created.</li>
+<li>The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the <a href="#file-2-other-eight-states">appropriate number of rows</a> for the counties from your two selected states.)</li>
+</ul>
 <p><strong>Task I</strong>. Use the <code>data_codebook()</code> function from the <a href="https://easystats.github.io/datawizard/index.html">datawizard package</a> (part of the <strong>easystats</strong> meta-package) with two specific settings, as shown below:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(projA_master, <span class="at">max_values =</span> <span class="dv">7</span>, <span class="at">range_at =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4382,8 +4387,8 @@ Note
 <div class="callout-body-container callout-body">
 <p>Make sure that your reader can use your <code>data_codebook()</code> results to see that:</p>
 <ol type="1">
-<li>Your tibble contains the correct number of rows for your chosen states, and 18 columns</li>
-<li>You have missing values on exactly six of the 16 variables in <code>projA_master</code>:
+<li>Your tibble contains the correct number of rows for your chosen states, and 15 columns</li>
+<li>You have missing values on exactly six of the 15 variables in <code>projA_master</code>:
 <ul>
 <li><code>prev_b</code> and <code>prev_w</code> are each missing the same number of counties,</li>
 <li><code>lbw_new</code> and <code>lbw_old</code> are each missing the same (smaller) number of counties,</li>
@@ -4546,13 +4551,12 @@ Note
 </section>
 <section id="the-project-a-template" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> The Project A Template</h1>
-<p>There is a Project A template available on <a href="https://github.com/THOMASELOVE/431-data">our 431-data page</a> as part of the <strong>projectA</strong> subfolder. It’s called <code>431-projA-template-2026.qmd</code>. Please use this template to facilitate your progress, and help us evaluate your work quickly.</p>
+<p>There is a <a href="https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd">Project A template</a> available on <a href="https://github.com/THOMASELOVE/431-data">our 431-data page</a> as part of the <strong>projectA</strong> subfolder. It’s called <code>431-projA-template-2026.qmd</code>. Please use this template to facilitate your progress, and help us evaluate your work quickly.</p>
 <section id="the-yaml-code" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-yaml-code"><span class="header-section-number">6.1</span> The YAML code</h2>
-<p>Leave the YAML code at the start of the template alone, other than changing your Title, Subtitle and Author information.</p>
+<p>Leave the YAML code at the start of the template alone, other than changing your Title and Author information.</p>
 <ul>
-<li>If you like, you can select a different theme for the HTML document than the one (<code>pulse</code>) that we specified in the template.</li>
-<li>Options for <a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming in Quarto are shown here</a>.</li>
+<li>If you like, you can select a different theme for the HTML document than the one (<code>pulse</code>) that we specified in the template. Options for <a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming in Quarto are shown here</a>.</li>
 </ul>
 </section>
 <section id="the-title" class="level2" data-number="6.2">
@@ -4570,7 +4574,7 @@ Note
 </section>
 <section id="sections-of-the-template" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sections-of-the-template"><span class="header-section-number">6.4</span> Sections of the Template</h2>
-<p>The Project A Report includes 17 sections:</p>
+<p>The Project A Report includes 17 sections, as described below. The [template]((https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) contains additional instructions, which should be <strong>deleted</strong> when you submit your final report to us.</p>
 <section id="section-1.-r-packages" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="section-1.-r-packages"><span class="header-section-number">6.4.1</span> Section 1. R Packages</h3>
 <p>All necessary packages (and no unused packages) should be loaded at the start of the work, and all warnings or messages associated with that loading are suppressed in the HTML result.</p>
@@ -4591,35 +4595,35 @@ Note
 </section>
 <section id="section-2.-data-ingest" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="section-2.-data-ingest"><span class="header-section-number">6.4.2</span> Section 2. Data Ingest</h3>
-<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management Task</a> <strong>A</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task A</strong>.</p>
 </section>
 <section id="section-3.-selecting-states" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="section-3.-selecting-states"><span class="header-section-number">6.4.3</span> Section 3. Selecting States</h3>
-<p>This is where you’ll do the work for <a href="#data-management-task">Data Management Task</a> <strong>B</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task B</strong>.</p>
 </section>
 <section id="section-4.-create-the-master-tibble" class="level3" data-number="6.4.4">
 <h3 data-number="6.4.4" class="anchored" data-anchor-id="section-4.-create-the-master-tibble"><span class="header-section-number">6.4.4</span> Section 4. Create the Master Tibble</h3>
-<p>This is where you’ll do the work for <a href="#data-management-task">Data Management Tasks</a> <strong>C</strong> and <strong>D</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Tasks C</strong> and <strong>D</strong>.</p>
 </section>
 <section id="section-5.-manage-names-and-types" class="level3" data-number="6.4.5">
 <h3 data-number="6.4.5" class="anchored" data-anchor-id="section-5.-manage-names-and-types"><span class="header-section-number">6.4.5</span> Section 5. Manage Names and Types</h3>
-<p>This is where you’ll do the work for <a href="#data-management-task">Data Management Tasks</a> <strong>E</strong> and <strong>F</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Tasks E</strong> and <strong>F</strong>.</p>
 </section>
 <section id="section-6.-create-a-new-factor" class="level3" data-number="6.4.6">
 <h3 data-number="6.4.6" class="anchored" data-anchor-id="section-6.-create-a-new-factor"><span class="header-section-number">6.4.6</span> Section 6. Create a New Factor</h3>
-<p>This is where you’ll do the work for <a href="#data-management-task">Data Management Tasks</a> <strong>G</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task G</strong>.</p>
 </section>
 <section id="section-7.-printing-the-tibble" class="level3" data-number="6.4.7">
 <h3 data-number="6.4.7" class="anchored" data-anchor-id="section-7.-printing-the-tibble"><span class="header-section-number">6.4.7</span> Section 7. Printing the Tibble</h3>
-<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management Task</a> <strong>H</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task H</strong>.</p>
 </section>
 <section id="section-8.-the-codebook" class="level3" data-number="6.4.8">
 <h3 data-number="6.4.8" class="anchored" data-anchor-id="section-8.-the-codebook"><span class="header-section-number">6.4.8</span> Section 8. The Codebook</h3>
-<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management Task</a> <strong>I</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task I</strong>.</p>
 </section>
 <section id="section-9.-saving-the-tibble" class="level3" data-number="6.4.9">
 <h3 data-number="6.4.9" class="anchored" data-anchor-id="section-9.-saving-the-tibble"><span class="header-section-number">6.4.9</span> Section 9. Saving the Tibble</h3>
-<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management Task</a> <strong>J</strong>.</p>
+<p>This is where you’ll do the work for <a href="#data-management-tasks">Data Management</a> <strong>Task J</strong>.</p>
 </section>
 <section id="section-10.-comparison-1" class="level3" data-number="6.4.10">
 <h3 data-number="6.4.10" class="anchored" data-anchor-id="section-10.-comparison-1"><span class="header-section-number">6.4.10</span> Section 10. Comparison 1</h3>
@@ -4655,7 +4659,7 @@ Note
 </ul>
 <p><strong>In preparing this response, I made no use of AI outside of spell-check and code completion within RStudio.</strong></p>
 <ul>
-<li>If you decide to get help from a large language model (like ChatGPT) to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.</li>
+<li>If you decide to use a large language model to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.</li>
 </ul>
 </section>
 <section id="section-16.-references" class="level3" data-number="6.4.16">
@@ -4713,16 +4717,16 @@ Note
 <h2 data-number="9.1" class="anchored" data-anchor-id="report-checklist-before-submission"><span class="header-section-number">9.1</span> Report Checklist before Submission</h2>
 <p>Before submitting your final report, check these things. Your work will receive a better grade if these things are done correctly.</p>
 <ol type="1">
-<li>There is a meaningful title (of no more than 80 characters, perhaps augmented by a subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for “County Health Rankings” throughout your work.</li>
+<li>There is a meaningful title (of no more than 80 characters, augmented by the 431 Project A subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for “County Health Rankings” throughout your work.</li>
 <li>You have used the section and subsection headings included in the template, and the work shows 17 numbered sections.</li>
-<li>Neither <code>#| include: FALSE</code> nor <code>#| eval: FALSE</code> is used in the project.</li>
+<li>Neither <code>#| include: false</code> nor <code>#| eval: false</code> is used anywhere in the project. (Note that you’ll have to delete lines included in the template to accomplish this.)</li>
 <li>The option <code>knitr::opts_chunk$set(comment = NA)</code> is set as part of your package loading, to ensure that R results in the HTML are not preceded with ##.</li>
 <li>Either the option <code>theme_bw()</code> or <code>theme_lucid()</code> is used as part of your package loading, to ensure that your ggplot-based graphs are easy to view.</li>
 <li>All packages are loaded near the top of the document (as opposed to partway through) and <code>#| message: FALSE</code> is used to suppress the messages created when loading packages.</li>
 <li>You have run spell check on your Quarto file (by hitting F7) before rendering it. You’ll also want to check the headings and subheadings in your HTML to ensure there are no misspellings there.</li>
 <li>The raw data (prior to filtering rows and selecting variables) is not printed or summarized or listed in your HTML.</li>
-<li>The analytic tibble is saved to an <code>.Rds</code> file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the <code>.Rds</code> file to Canvas with your final report.</li>
 <li>The project demonstrates that all elements of data management are completed properly as part of Section 8.</li>
+<li>The analytic tibble is saved to an <code>.Rds</code> file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the <code>.Rds</code> file to Canvas with your final report.</li>
 <li>There are no avoidable scrolling windows in the HTML document. Avoidable scrolling windows are those fixed by hitting ENTER more often in writing R code.</li>
 <li>All 17 sections listed in the template appear in your HTML and on your Table of Contents.</li>
 <li>Professor Love’s instructions from the template are NOT repeated in your HTML.</li>
@@ -5263,12 +5267,12 @@ Note
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## General Project A Rules</span></span>
 <span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>You can work alone, or with one other person on Project A.</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>There is a required Project A Quarto template that you will use to build your Project A report. Details on the template are <span class="co">[</span><span class="ot">found here</span><span class="co">](#the-project-a-template)</span>.</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>There is a required <span class="co">[</span><span class="ot">Project A Quarto template</span><span class="co">](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd)</span> that you will use to build your Project A report. Details on the template are <span class="co">[</span><span class="ot">found here</span><span class="co">](#the-project-a-template)</span>.</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>When you have problems on Project A, review these instructions and the other course materials, but also <span class="co">[</span><span class="ot">ask us for help</span><span class="co">](https://thomaselove.github.io/431-2026/contact.html)</span>. Please don&#39;t punish yourself by waiting to talk with us.</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see <span class="co">[</span><span class="ot">here</span><span class="co">](#section-16.-ai-usage-and-references)</span>), so keep track of what you use.</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see <span class="co">[</span><span class="ot">here</span><span class="co">](#section-15.-ai-usage)</span>), so keep track of what you use.</span>
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Be sure to use spell check (just hit F7) on your Quarto file before rendering it, and review the HTML result carefully to ensure that no residual warnings or error messages remain in the document before you submit your work. We&#39;ve provided a <span class="co">[</span><span class="ot">checklist for the report</span><span class="co">](#report-checklist-before-submission)</span> which you should go through before you submit it.</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>There should be no reference to statistical significance (or use of the word &quot;significant&quot;) anywhere in your Project A. You should never use the notion of statistical significance in any context, ever^<span class="co">[</span><span class="ot">We&#39;ll talk about this quite a bit in Class 11 in late September, for example.</span><span class="co">]</span>.</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Read the footnotes provided in these instructions^<span class="co">[</span><span class="ot">I often hide very useful tips in the footnotes to encourage people to read the entire document carefully.</span><span class="co">]</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Read the footnotes provided in these instructions^<span class="co">[</span><span class="ot">I often hide very useful tips in the footnotes to encourage people to read the entire document carefully.</span><span class="co">]</span>.</span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your Deliverables</span></span>
 <span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
@@ -5278,7 +5282,7 @@ Note
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The main submission for Project A has four parts. These are due in mid-October on the date specified in the Course <span class="co">[</span><span class="ot">Calendar</span><span class="co">](https://thomaselove.github.io/431-2026/calendar.html)</span>.</span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="ss">    1. </span>Your project A master **data set**, saved as an .Rds file.</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="ss">    2. </span>A detailed **report**, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template we have provided.</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="ss">    2. </span>A detailed **report**, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template <span class="co">[</span><span class="ot">we have provided</span><span class="co">](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd)</span>.</span>
 <span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="ss">    3. </span>A 3-minute recorded **video** presentation which highlights some key findings from your report (details can be <span class="co">[</span><span class="ot">found here</span><span class="co">](#the-highlight-video)</span>), and</span>
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="ss">    4. </span>A **self-evaluation** form, which you&#39;ll complete after submitting the other three elements to Canvas. Details on the form <span class="co">[</span><span class="ot">are found here</span><span class="co">](#the-self-evaluation)</span>.</span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -5332,7 +5336,7 @@ Note
 <span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Management Tasks</span></span>
 <span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>Using the Quarto template for Project A, you will complete the following tasks.</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>Using the <span class="co">[</span><span class="ot">Quarto template for Project A</span><span class="co">](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd)</span> we provide on our <span class="co">[</span><span class="ot">431-data page</span><span class="co">](https://github.com/THOMASELOVE/431-data)</span>, you will complete the following tasks.</span>
 <span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>**Task A**. Ingest the data from each workbook (File 1 = main 4 states, File 2 = additional 8 states) properly into a separate tibble in R using tools from <span class="co">[</span><span class="ot">the readxl package</span><span class="co">](https://readxl.tidyverse.org/)</span>, while accounting for missing values^<span class="co">[</span><span class="ot">Remember that missingness is indicated in different ways in the two workbooks, and so you&#39;ll have to account for that in ingesting the data.</span><span class="co">]</span>. </span>
 <span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
@@ -5377,179 +5381,179 @@ Note
 <span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ensure that these values are in the order &quot;Low&quot;, then &quot;Mid&quot;, then &quot;High&quot; when you run <span class="in">`tabyl()`</span> on the <span class="in">`cost_g`</span> variable.</span>
 <span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>**Task H**. Print the **projA_master** tibble by simply typing in its name. </span>
-<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verify that only 10 rows are printed.</span>
-<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The tibble should contain 18 variables: the original 16 plus the two (<span class="in">`cost_g`</span> and <span class="in">`food_g`</span>) that you created. </span>
-<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the <span class="co">[</span><span class="ot">appropriate number of rows</span><span class="co">](#file-2-other-eight-states)</span> for the counties from your two selected states.)</span>
-<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>**Task I**. Use the `data_codebook()` function from the [datawizard package](https://easystats.github.io/datawizard/index.html) (part of the **easystats** meta-package) with two specific settings, as shown below:</span>
-<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(projA_master, <span class="at">max_values =</span> <span class="dv">7</span>, <span class="at">range_at =</span> <span class="dv">15</span>)</span>
-<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a>Verify that your data meet all of the elements below, and **include a sentence or two** after the <span class="in">`data_codebook()`</span> results that state (clearly, in your own words) that you have checked all of the elements of the data codebook listed here to ensure that your data are properly managed.</span>
-<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
-<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### Elements of `data_codebook()` to check</span></span>
-<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>Make sure that your reader can use your <span class="in">`data_codebook()`</span> results to see that:</span>
-<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Your tibble contains the correct number of rows for your chosen states, and 18 columns</span>
-<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>You have missing values on exactly six of the 16 variables in <span class="in">`projA_master`</span>:</span>
-<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`prev_b`</span> and <span class="in">`prev_w`</span> are each missing the same number of counties,</span>
-<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`lbw_new`</span> and <span class="in">`lbw_old`</span> are each missing the same (smaller) number of counties,</span>
-<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`child_m`</span> and <span class="in">`firearm`</span> each have missing observations,</span>
-<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>while all other variables contain data on all observations</span>
-<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>All of your planned outcome and quantitative predictor variables show a minimum and maximum value that make sense, in particular...</span>
-<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all values of <span class="in">`poorfair`</span> should be between 10 and 36</span>
-<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`prev`</span> values (for either black or white) should be between 200 and 19,000</span>
-<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`lbw`</span> values (new or old) should be between 3 and 18</span>
-<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`pop`</span> values should be between 3,000 and 10,000,000</span>
-<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`water_v`</span> values should be either Yes or No</span>
-<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`child_m`</span> values should be between 15 and 170</span>
-<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`life_exp`</span> values should be between 65 and 98</span>
-<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`firearm`</span> values should be between 1 and 75</span>
-<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`housing`</span> values should be between 1 and 35</span>
-<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>You have the right number of counties in each <span class="in">`state`</span>, and that the only <span class="in">`state`</span>s shown in your data are the six you have selected.</span>
-<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Your new factor variable <span class="in">`cost_g`</span> has the right number of counties in each category, and the categories appear in a sensible order, as we described when creating them.</span>
-<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>All of your variable Types are correct (character for <span class="in">`fipscode`</span> and <span class="in">`county`</span>, categorical for <span class="in">`state`</span>, <span class="in">`water_v`</span> and <span class="in">`cost_g`</span>, and numeric for all others.)</span>
-<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>**Task J**. Save your **projA_master** tibble as an R data set with a name including your own, for example <span class="in">`projA_master_YOURNAME.Rds`</span>. </span>
-<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You will need to send us this file as part of your Project A submission.</span>
-<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a><span class="fu"># Analyzing the Data</span></span>
-<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>You will complete four analyses (called comparisons in what follows) in Project A.</span>
-<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Think of a graph as a comparison. All graphs are comparisons (indeed, all statistical analyses are comparisons). If you already have the graph in mind, think of what comparisons it&#39;s enabling. Or if you haven&#39;t settled on the graph yet, think of what comparisons you&#39;d like to make. </span><span class="co">[</span><span class="ot">Andrew Gelman</span><span class="co">](http://andrewgelman.com/2014/03/25/statistical-graphics-course-statistical-graphics-advice/)</span></span>
-<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="fu">## Developing Research Questions</span></span>
-<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>For comparisons 1-4, you will need to specify a research question at the start of the work.</span>
-<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Start by describing what you want to study, and then specify a research question (which should end with a question mark and be something you can resolve with the planned analysis.) </span>
-<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Don’t boil the ocean here. You’re looking for a research question that can be reasonably addressed using your data, so it has to be pretty straightforward.</span>
-<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Before you look at the data, develop a pre-existing belief about what will happen, and include a statement about that belief before specifying your question.</span>
-<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>A research question uses formal but clear language.</span>
-<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Given your planned analyses, stay away from statements about cause and effect, and don’t use the words correlate or regression (in any form) in your research question.</span>
-<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 1</span></span>
-<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a>Here, you will be exploring the distribution of life expectancy across your selected six states.</span>
-<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on life expectancy, and specify the details on how this measure was obtained by the County Health Rankings, and what year it describes.</span>
-<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>b. Create an appropriate visualization to compare your six states in terms of the distribution of life expectancy. A good visualization will show the data effectively, and provide a clear sense of the center, spread and shape of the distributions. </span>
-<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advice for all Project A Visualizations</span></span>
-<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>Appropriate and meaningful titles, clear and detailed labels and the use of clear and clean graphical designs are all important in creating a proper visualization. Helpful use of color and legends are also worthy of your attention. </span>
-<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Your graph&#39;s title (and/or subtitle) should describe briefly what the plot shows about the question of interest, instead of simply identifying the names of the variables and the type of plot that is shown.</span>
-<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>It&#39;s also important to provide all necessary supporting information, including both the source of the data you&#39;re displaying and the time period when it was gathered. This is also relevant to any tables you present.</span>
-<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you see especially unusual values in any visualization you generate for Project A, it would be useful to identify those counties, either in the plot itself as an annotation, or in the text describing the findings.</span>
-<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You will, of course, use the **ggplot2** package from the **tidyverse** to create all of your Project A visualizations.</span>
-<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>c. Follow your visualization with an attractive table which specifies for each state the number of counties displayed in your plot, along with the sample mean, standard deviation, median and interquartile range of life expectancy within that state, and then provide the overall results on these measures across all six states. Take the time to provide useful labels and attend to details in building an attractive, well-designed table.</span>
-<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>d. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings shown in your visualization and table, in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. </span>
-<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 2</span></span>
-<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a>Here, you will be exploring the association between firearm fatality rates and population across the counties with data in your selected six states.</span>
-<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on the two measures of interest in this comparison.</span>
-<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>b. Build a scatterplot where both the y and x axes are shown as linear. Make sure your title (or subtitle) describes the nature of the association that you see.</span>
-<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>c. Then build a second scatterplot where the population axis is shown on a base-10 logarithmic scale^<span class="co">[</span><span class="ot">The `scale_x_log10()` function will be useful.</span><span class="co">]</span>, adjusting any labels appropriately.</span>
-<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>d. Select your preference between the two scatterplots you built, and then build another version, this time faceting the scatterplot into six smaller ones, each showing one state (be sure the states are well labeled in the resulting plot.)</span>
-<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>e. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings of your three visualizations, especially in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. </span>
-<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 3</span></span>
-<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>Here, you will work with a paired samples design to compare means. You have the choice of either (1) comparing the white to black rates of preventable hospital stays or (2) comparing the old to new rates of low birth weight in the counties where data are available for your states.</span>
-<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. </span>
-<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>An example of a dull but moderately effective and minimally appropriate research question for Comparison 3 might be: *Are there meaningful differences in the mean of [outcome] for counties measured in [new time period] as compared to [old time period]?*</span>
-<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a>b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.</span>
-<span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You&#39;ll need to focus on summarizing the paired differences. Select between (for example) &quot;black - white&quot; or &quot;white - black&quot; so that the sample mean is positive.</span>
-<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>As part of your summary, produce a three-plot figure using the patchwork package. Include a boxplot (with violin and the mean indicated), a histogram with a Normal curve, and a Normal Q-Q plot of the paired differences. Be sure to specify your bin width in an effective way for the histogram, and please remind us how many “pairs” of values you have to work with in your subtitle.</span>
-<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Follow your figure with numerical summaries of the paired differences. The <span class="in">`lovedist()`</span> function from the Course Book may be helpful.</span>
-<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You will also need to provide some evidence on how well the “pairing” worked in this setting, by estimating and interpreting the Pearson correlation between the two sets of paired values.</span>
-<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>At the end of your summary, provide the code to obtain and a sentence where you specify the value for each component of your paired difference, and the paired difference itself, for Cuyahoga County, in Ohio, where CWRU is located.</span>
-<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a>c. Build a 90% confidence interval for the population mean difference, first with (1) an ordinary least squares model to generate an appropriate t-based procedure, and then with (2) an appropriate bootstrap procedure.</span>
-<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a>d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. </span>
-<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a>e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.</span>
-<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a>f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 3.</span>
-<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>If you see problems with the assumptions behind your choice of interval, that would be a good thing to talk about here, for instance.</span>
-<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>If pairing didn’t “help” (in the sense that there was no substantial positive correlation between the samples), that would be worth discussing here.</span>
-<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Another issue that is worth discussing is your target population, and what evidence you can describe that might indicate whether your selected states are a representative sample of the US as a whole, or perhaps some particular part of the United States.</span>
-<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You should also provide at least one useful “next step” that you could take to improve this analysis (just saying “get more data” isn’t a sufficient next step.)</span>
-<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 4</span></span>
-<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a>Here, you will work with an independent samples design to compare means. You have the choice of either (1) comparing the percentage of adults reporting poor or fair health between counties with Low vs. High levels of housing cost burden (while ignoring the counties with &quot;Mid&quot; levels of the <span class="in">`cost_g`</span> variable), or (2) comparing child mortality between counties with and without drinking water violations for the counties where child mortality data are available.</span>
-<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. </span>
-<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>An example of a dull but moderately effective and minimally appropriate research question for Comparison 4 might be: *Are there meaningful differences in the mean of [outcome] for counties who [did have a drinking water violation in time period] and those which did not?* Use complete English sentences to identify your outcome and your predictor, describing what each variable means and its units of measurement. </span>
-<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a>b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.</span>
-<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Here, prepare descriptive summaries of the data across the two predictor groups for your chosen outcome, including, of course, attractive and well-constructed visualizations which can be used for comparisons. A comparison boxplot with violins and means is an excellent option here for the key visualization. Be sure to label it carefully, and use color and/or fill wisely to create a clear and attractive picture.</span>
-<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Provide a detailed set of numerical summaries of the outcome within each of the two groups, following your visualization. Again, the <span class="in">`lovedist()`</span> function would be a good option.</span>
-<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>In describing your results, use &quot;with a violation - without&quot; or &quot;High burden - Low burden&quot;, for the direction of the effect, please. This might be expected to lead to a positive sample mean difference, although that may not turn out to be the case.</span>
-<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>At the end of your summary, provide code to obtain and a sentence where you specify the values of your outcome and predictor for Cuyahoga County, in Ohio, where CWRU’s campus is located.</span>
-<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a>c. Build a 90% confidence interval for the difference (either with violation - without or High burden - Low burden, please) in group means in two ways: (1) using an ordinary least squares model to produce a pooled-t procedure, and then (2) using a bootstrap procedure. </span>
-<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-315"><a href="#cb5-315" aria-hidden="true" tabindex="-1"></a>d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. </span>
-<span id="cb5-316"><a href="#cb5-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-317"><a href="#cb5-317" aria-hidden="true" tabindex="-1"></a>e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.</span>
-<span id="cb5-318"><a href="#cb5-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-319"><a href="#cb5-319" aria-hidden="true" tabindex="-1"></a>f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 4, again following all of the relevant advice provided in part f of Comparison 3.</span>
-<span id="cb5-320"><a href="#cb5-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-321"><a href="#cb5-321" aria-hidden="true" tabindex="-1"></a><span class="fu"># Completing the Report</span></span>
-<span id="cb5-322"><a href="#cb5-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-323"><a href="#cb5-323" aria-hidden="true" tabindex="-1"></a>The materials discussed so far include the first 13 sections of the final Project A report (which will include 17 sections in total.)</span>
-<span id="cb5-324"><a href="#cb5-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a>The remainder of the project report includes:</span>
-<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-327"><a href="#cb5-327" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a <span class="co">[</span><span class="ot">reflections section</span><span class="co">](#section-14.-reflection)</span>, </span>
-<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>information on <span class="co">[</span><span class="ot">AI usage</span><span class="co">](#section-15.-ai-usage)</span>, </span>
-<span id="cb5-329"><a href="#cb5-329" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a list of <span class="co">[</span><span class="ot">references</span><span class="co">](#section-16.-references)</span>, and</span>
-<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">session information</span><span class="co">](#section-17.-session-information)</span>. </span>
-<span id="cb5-331"><a href="#cb5-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a>Each of the report&#39;s 17 sections are described in detail in the <span class="co">[</span><span class="ot">Project A Template instructions</span><span class="co">](#the-project-a-template)</span>.</span>
-<span id="cb5-333"><a href="#cb5-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Project A Template</span></span>
-<span id="cb5-335"><a href="#cb5-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a>There is a Project A template available on <span class="co">[</span><span class="ot">our 431-data page</span><span class="co">](https://github.com/THOMASELOVE/431-data)</span> as part of the **projectA** subfolder. It&#39;s called <span class="in">`431-projA-template-2026.qmd`</span>. Please use this template to facilitate your progress, and help us evaluate your work quickly.</span>
-<span id="cb5-337"><a href="#cb5-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-338"><a href="#cb5-338" aria-hidden="true" tabindex="-1"></a><span class="fu">## The YAML code</span></span>
-<span id="cb5-339"><a href="#cb5-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a>Leave the YAML code at the start of the template alone, other than changing your Title, Subtitle and Author information. </span>
-<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-342"><a href="#cb5-342" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you like, you can select a different theme for the HTML document than the one (<span class="in">`pulse`</span>) that we specified in the template. </span>
-<span id="cb5-343"><a href="#cb5-343" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Options for <span class="co">[</span><span class="ot">HTML theming in Quarto are shown here</span><span class="co">](https://quarto.org/docs/output-formats/html-themes.html)</span>.</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verify that only 10 rows are printed.</span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The tibble should contain 15 variables: the original 14 plus the <span class="in">`cost_g`</span> factor you created. </span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the <span class="co">[</span><span class="ot">appropriate number of rows</span><span class="co">](#file-2-other-eight-states)</span> for the counties from your two selected states.)</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>**Task I**. Use the `data_codebook()` function from the [datawizard package](https://easystats.github.io/datawizard/index.html) (part of the **easystats** meta-package) with two specific settings, as shown below:</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="fu">data_codebook</span>(projA_master, <span class="at">max_values =</span> <span class="dv">7</span>, <span class="at">range_at =</span> <span class="dv">15</span>)</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a>Verify that your data meet all of the elements below, and **include a sentence or two** after the <span class="in">`data_codebook()`</span> results that state (clearly, in your own words) that you have checked all of the elements of the data codebook listed here to ensure that your data are properly managed.</span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### Elements of `data_codebook()` to check</span></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>Make sure that your reader can use your <span class="in">`data_codebook()`</span> results to see that:</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Your tibble contains the correct number of rows for your chosen states, and 15 columns</span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>You have missing values on exactly six of the 15 variables in <span class="in">`projA_master`</span>:</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`prev_b`</span> and <span class="in">`prev_w`</span> are each missing the same number of counties,</span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`lbw_new`</span> and <span class="in">`lbw_old`</span> are each missing the same (smaller) number of counties,</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span><span class="in">`child_m`</span> and <span class="in">`firearm`</span> each have missing observations,</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>while all other variables contain data on all observations</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>All of your planned outcome and quantitative predictor variables show a minimum and maximum value that make sense, in particular...</span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all values of <span class="in">`poorfair`</span> should be between 10 and 36</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`prev`</span> values (for either black or white) should be between 200 and 19,000</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`lbw`</span> values (new or old) should be between 3 and 18</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`pop`</span> values should be between 3,000 and 10,000,000</span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`water_v`</span> values should be either Yes or No</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`child_m`</span> values should be between 15 and 170</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`life_exp`</span> values should be between 65 and 98</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`firearm`</span> values should be between 1 and 75</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all <span class="in">`housing`</span> values should be between 1 and 35</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>You have the right number of counties in each <span class="in">`state`</span>, and that the only <span class="in">`state`</span>s shown in your data are the six you have selected.</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Your new factor variable <span class="in">`cost_g`</span> has the right number of counties in each category, and the categories appear in a sensible order, as we described when creating them.</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>All of your variable Types are correct (character for <span class="in">`fipscode`</span> and <span class="in">`county`</span>, categorical for <span class="in">`state`</span>, <span class="in">`water_v`</span> and <span class="in">`cost_g`</span>, and numeric for all others.)</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>**Task J**. Save your **projA_master** tibble as an R data set with a name including your own, for example <span class="in">`projA_master_YOURNAME.Rds`</span>. </span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You will need to send us this file as part of your Project A submission.</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a><span class="fu"># Analyzing the Data</span></span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>You will complete four analyses (called comparisons in what follows) in Project A.</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Think of a graph as a comparison. All graphs are comparisons (indeed, all statistical analyses are comparisons). If you already have the graph in mind, think of what comparisons it&#39;s enabling. Or if you haven&#39;t settled on the graph yet, think of what comparisons you&#39;d like to make. </span><span class="co">[</span><span class="ot">Andrew Gelman</span><span class="co">](http://andrewgelman.com/2014/03/25/statistical-graphics-course-statistical-graphics-advice/)</span></span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## Developing Research Questions</span></span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>For comparisons 1-4, you will need to specify a research question at the start of the work.</span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Start by describing what you want to study, and then specify a research question (which should end with a question mark and be something you can resolve with the planned analysis.) </span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Don’t boil the ocean here. You’re looking for a research question that can be reasonably addressed using your data, so it has to be pretty straightforward.</span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Before you look at the data, develop a pre-existing belief about what will happen, and include a statement about that belief before specifying your question.</span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>A research question uses formal but clear language.</span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Given your planned analyses, stay away from statements about cause and effect, and don’t use the words correlate or regression (in any form) in your research question.</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 1</span></span>
+<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a>Here, you will be exploring the distribution of life expectancy across your selected six states.</span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on life expectancy, and specify the details on how this measure was obtained by the County Health Rankings, and what year it describes.</span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a>b. Create an appropriate visualization to compare your six states in terms of the distribution of life expectancy. A good visualization will show the data effectively, and provide a clear sense of the center, spread and shape of the distributions. </span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advice for all Project A Visualizations</span></span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>Appropriate and meaningful titles, clear and detailed labels and the use of clear and clean graphical designs are all important in creating a proper visualization. Helpful use of color and legends are also worthy of your attention. </span>
+<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Your graph&#39;s title (and/or subtitle) should describe briefly what the plot shows about the question of interest, instead of simply identifying the names of the variables and the type of plot that is shown.</span>
+<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>It&#39;s also important to provide all necessary supporting information, including both the source of the data you&#39;re displaying and the time period when it was gathered. This is also relevant to any tables you present.</span>
+<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you see especially unusual values in any visualization you generate for Project A, it would be useful to identify those counties, either in the plot itself as an annotation, or in the text describing the findings.</span>
+<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You will, of course, use the **ggplot2** package from the **tidyverse** to create all of your Project A visualizations.</span>
+<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>c. Follow your visualization with an attractive table which specifies for each state the number of counties displayed in your plot, along with the sample mean, standard deviation, median and interquartile range of life expectancy within that state, and then provide the overall results on these measures across all six states. Take the time to provide useful labels and attend to details in building an attractive, well-designed table.</span>
+<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>d. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings shown in your visualization and table, in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. </span>
+<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 2</span></span>
+<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>Here, you will be exploring the association between firearm fatality rates and population across the counties with data in your selected six states.</span>
+<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on the two measures of interest in this comparison.</span>
+<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>b. Build a scatterplot where both the y and x axes are shown as linear. Make sure your title (or subtitle) describes the nature of the association that you see.</span>
+<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>c. Then build a second scatterplot where the population axis is shown on a base-10 logarithmic scale^<span class="co">[</span><span class="ot">The `scale_x_log10()` function will be useful.</span><span class="co">]</span>, adjusting any labels appropriately.</span>
+<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>d. Select your preference between the two scatterplots you built, and then build another version, this time faceting the scatterplot into six smaller ones, each showing one state (be sure the states are well labeled in the resulting plot.)</span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>e. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings of your three visualizations, especially in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. </span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 3</span></span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>Here, you will work with a paired samples design to compare means. You have the choice of either (1) comparing the white to black rates of preventable hospital stays or (2) comparing the old to new rates of low birth weight in the counties where data are available for your states.</span>
+<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. </span>
+<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>An example of a dull but moderately effective and minimally appropriate research question for Comparison 3 might be: *Are there meaningful differences in the mean of [outcome] for counties measured in [new time period] as compared to [old time period]?*</span>
+<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a>b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.</span>
+<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You&#39;ll need to focus on summarizing the paired differences. Select between (for example) &quot;black - white&quot; or &quot;white - black&quot; so that the sample mean is positive.</span>
+<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>As part of your summary, produce a three-plot figure using the patchwork package. Include a boxplot (with violin and the mean indicated), a histogram with a Normal curve, and a Normal Q-Q plot of the paired differences. Be sure to specify your bin width in an effective way for the histogram, and please remind us how many “pairs” of values you have to work with in your subtitle.</span>
+<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Follow your figure with numerical summaries of the paired differences. The <span class="in">`lovedist()`</span> function from the Course Book may be helpful.</span>
+<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You will also need to provide some evidence on how well the “pairing” worked in this setting, by estimating and interpreting the Pearson correlation between the two sets of paired values.</span>
+<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>At the end of your summary, provide the code to obtain and a sentence where you specify the value for each component of your paired difference, and the paired difference itself, for Cuyahoga County, in Ohio, where CWRU is located.</span>
+<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a>c. Build a 90% confidence interval for the population mean difference, first with (1) an ordinary least squares model to generate an appropriate t-based procedure, and then with (2) an appropriate bootstrap procedure.</span>
+<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a>d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. </span>
+<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a>e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.</span>
+<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a>f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 3.</span>
+<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>If you see problems with the assumptions behind your choice of interval, that would be a good thing to talk about here, for instance.</span>
+<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>If pairing didn’t “help” (in the sense that there was no substantial positive correlation between the samples), that would be worth discussing here.</span>
+<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Another issue that is worth discussing is your target population, and what evidence you can describe that might indicate whether your selected states are a representative sample of the US as a whole, or perhaps some particular part of the United States.</span>
+<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>You should also provide at least one useful “next step” that you could take to improve this analysis (just saying “get more data” isn’t a sufficient next step.)</span>
+<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparison 4</span></span>
+<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a>Here, you will work with an independent samples design to compare means. You have the choice of either (1) comparing the percentage of adults reporting poor or fair health between counties with Low vs. High levels of housing cost burden (while ignoring the counties with &quot;Mid&quot; levels of the <span class="in">`cost_g`</span> variable), or (2) comparing child mortality between counties with and without drinking water violations for the counties where child mortality data are available.</span>
+<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a>a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. </span>
+<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>An example of a dull but moderately effective and minimally appropriate research question for Comparison 4 might be: *Are there meaningful differences in the mean of [outcome] for counties who [did have a drinking water violation in time period] and those which did not?* Use complete English sentences to identify your outcome and your predictor, describing what each variable means and its units of measurement. </span>
+<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a>b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.</span>
+<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Here, prepare descriptive summaries of the data across the two predictor groups for your chosen outcome, including, of course, attractive and well-constructed visualizations which can be used for comparisons. A comparison boxplot with violins and means is an excellent option here for the key visualization. Be sure to label it carefully, and use color and/or fill wisely to create a clear and attractive picture.</span>
+<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>Provide a detailed set of numerical summaries of the outcome within each of the two groups, following your visualization. Again, the <span class="in">`lovedist()`</span> function would be a good option.</span>
+<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>In describing your results, use &quot;with a violation - without&quot; or &quot;High burden - Low burden&quot;, for the direction of the effect, please. This might be expected to lead to a positive sample mean difference, although that may not turn out to be the case.</span>
+<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>At the end of your summary, provide code to obtain and a sentence where you specify the values of your outcome and predictor for Cuyahoga County, in Ohio, where CWRU’s campus is located.</span>
+<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a>c. Build a 90% confidence interval for the difference (either with violation - without or High burden - Low burden, please) in group means in two ways: (1) using an ordinary least squares model to produce a pooled-t procedure, and then (2) using a bootstrap procedure. </span>
+<span id="cb5-315"><a href="#cb5-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-316"><a href="#cb5-316" aria-hidden="true" tabindex="-1"></a>d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. </span>
+<span id="cb5-317"><a href="#cb5-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-318"><a href="#cb5-318" aria-hidden="true" tabindex="-1"></a>e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.</span>
+<span id="cb5-319"><a href="#cb5-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-320"><a href="#cb5-320" aria-hidden="true" tabindex="-1"></a>f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 4, again following all of the relevant advice provided in part f of Comparison 3.</span>
+<span id="cb5-321"><a href="#cb5-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-322"><a href="#cb5-322" aria-hidden="true" tabindex="-1"></a><span class="fu"># Completing the Report</span></span>
+<span id="cb5-323"><a href="#cb5-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-324"><a href="#cb5-324" aria-hidden="true" tabindex="-1"></a>The materials discussed so far include the first 13 sections of the final Project A report (which will include 17 sections in total.)</span>
+<span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a>The remainder of the project report includes:</span>
+<span id="cb5-327"><a href="#cb5-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a <span class="co">[</span><span class="ot">reflections section</span><span class="co">](#section-14.-reflection)</span>, </span>
+<span id="cb5-329"><a href="#cb5-329" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>information on <span class="co">[</span><span class="ot">AI usage</span><span class="co">](#section-15.-ai-usage)</span>, </span>
+<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>a list of <span class="co">[</span><span class="ot">references</span><span class="co">](#section-16.-references)</span>, and</span>
+<span id="cb5-331"><a href="#cb5-331" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">session information</span><span class="co">](#section-17.-session-information)</span>. </span>
+<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-333"><a href="#cb5-333" aria-hidden="true" tabindex="-1"></a>Each of the report&#39;s 17 sections are described in detail in the <span class="co">[</span><span class="ot">Project A Template instructions</span><span class="co">](#the-project-a-template)</span>.</span>
+<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-335"><a href="#cb5-335" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Project A Template</span></span>
+<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-337"><a href="#cb5-337" aria-hidden="true" tabindex="-1"></a>There is a <span class="co">[</span><span class="ot">Project A template</span><span class="co">](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd)</span> available on <span class="co">[</span><span class="ot">our 431-data page</span><span class="co">](https://github.com/THOMASELOVE/431-data)</span> as part of the **projectA** subfolder. It&#39;s called <span class="in">`431-projA-template-2026.qmd`</span>. Please use this template to facilitate your progress, and help us evaluate your work quickly.</span>
+<span id="cb5-338"><a href="#cb5-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-339"><a href="#cb5-339" aria-hidden="true" tabindex="-1"></a><span class="fu">## The YAML code</span></span>
+<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a>Leave the YAML code at the start of the template alone, other than changing your Title and Author information. </span>
+<span id="cb5-342"><a href="#cb5-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-343"><a href="#cb5-343" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you like, you can select a different theme for the HTML document than the one (<span class="in">`pulse`</span>) that we specified in the template. Options for <span class="co">[</span><span class="ot">HTML theming in Quarto are shown here</span><span class="co">](https://quarto.org/docs/output-formats/html-themes.html)</span>.</span>
 <span id="cb5-344"><a href="#cb5-344" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-345"><a href="#cb5-345" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Title</span></span>
 <span id="cb5-346"><a href="#cb5-346" aria-hidden="true" tabindex="-1"></a></span>
@@ -5565,7 +5569,7 @@ Note
 <span id="cb5-356"><a href="#cb5-356" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-357"><a href="#cb5-357" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sections of the Template</span></span>
 <span id="cb5-358"><a href="#cb5-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-359"><a href="#cb5-359" aria-hidden="true" tabindex="-1"></a>The Project A Report includes 17 sections:</span>
+<span id="cb5-359"><a href="#cb5-359" aria-hidden="true" tabindex="-1"></a>The Project A Report includes 17 sections, as described below. The <span class="co">[</span><span class="ot">template</span><span class="co">]</span>((https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) contains additional instructions, which should be **deleted** when you submit your final report to us.</span>
 <span id="cb5-360"><a href="#cb5-360" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-361"><a href="#cb5-361" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 1. R Packages</span></span>
 <span id="cb5-362"><a href="#cb5-362" aria-hidden="true" tabindex="-1"></a></span>
@@ -5581,35 +5585,35 @@ Note
 <span id="cb5-372"><a href="#cb5-372" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-373"><a href="#cb5-373" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 2. Data Ingest</span></span>
 <span id="cb5-374"><a href="#cb5-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-375"><a href="#cb5-375" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Task</span><span class="co">](#data-management-tasks)</span> **A**.</span>
+<span id="cb5-375"><a href="#cb5-375" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task A**.</span>
 <span id="cb5-376"><a href="#cb5-376" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-377"><a href="#cb5-377" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 3. Selecting States</span></span>
 <span id="cb5-378"><a href="#cb5-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-379"><a href="#cb5-379" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Task</span><span class="co">](#data-management-task)</span> **B**.</span>
+<span id="cb5-379"><a href="#cb5-379" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task B**.</span>
 <span id="cb5-380"><a href="#cb5-380" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-381"><a href="#cb5-381" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 4. Create the Master Tibble</span></span>
 <span id="cb5-382"><a href="#cb5-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-383"><a href="#cb5-383" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Tasks</span><span class="co">](#data-management-task)</span> **C** and **D**.</span>
+<span id="cb5-383"><a href="#cb5-383" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Tasks C** and **D**.</span>
 <span id="cb5-384"><a href="#cb5-384" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-385"><a href="#cb5-385" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 5. Manage Names and Types</span></span>
 <span id="cb5-386"><a href="#cb5-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-387"><a href="#cb5-387" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Tasks</span><span class="co">](#data-management-task)</span> **E** and **F**.</span>
+<span id="cb5-387"><a href="#cb5-387" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Tasks E** and **F**.</span>
 <span id="cb5-388"><a href="#cb5-388" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-389"><a href="#cb5-389" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 6. Create a New Factor</span></span>
 <span id="cb5-390"><a href="#cb5-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-391"><a href="#cb5-391" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Tasks</span><span class="co">](#data-management-task)</span> **G**.</span>
+<span id="cb5-391"><a href="#cb5-391" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task G**.</span>
 <span id="cb5-392"><a href="#cb5-392" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-393"><a href="#cb5-393" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 7. Printing the Tibble</span></span>
 <span id="cb5-394"><a href="#cb5-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-395"><a href="#cb5-395" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Task</span><span class="co">](#data-management-tasks)</span> **H**.</span>
+<span id="cb5-395"><a href="#cb5-395" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task H**.</span>
 <span id="cb5-396"><a href="#cb5-396" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-397"><a href="#cb5-397" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 8. The Codebook</span></span>
 <span id="cb5-398"><a href="#cb5-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-399"><a href="#cb5-399" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Task</span><span class="co">](#data-management-tasks)</span> **I**.</span>
+<span id="cb5-399"><a href="#cb5-399" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task I**.</span>
 <span id="cb5-400"><a href="#cb5-400" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-401"><a href="#cb5-401" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 9. Saving the Tibble</span></span>
 <span id="cb5-402"><a href="#cb5-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-403"><a href="#cb5-403" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management Task</span><span class="co">](#data-management-tasks)</span> **J**.</span>
+<span id="cb5-403"><a href="#cb5-403" aria-hidden="true" tabindex="-1"></a>This is where you&#39;ll do the work for <span class="co">[</span><span class="ot">Data Management</span><span class="co">](#data-management-tasks)</span> **Task J**.</span>
 <span id="cb5-404"><a href="#cb5-404" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-405"><a href="#cb5-405" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 10. Comparison 1</span></span>
 <span id="cb5-406"><a href="#cb5-406" aria-hidden="true" tabindex="-1"></a></span>
@@ -5641,7 +5645,7 @@ Note
 <span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-433"><a href="#cb5-433" aria-hidden="true" tabindex="-1"></a>**In preparing this response, I made no use of AI outside of spell-check and code completion within RStudio.**</span>
 <span id="cb5-434"><a href="#cb5-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-435"><a href="#cb5-435" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you decide to get help from a large language model (like ChatGPT) to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.</span>
+<span id="cb5-435"><a href="#cb5-435" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If you decide to use a large language model to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.</span>
 <span id="cb5-436"><a href="#cb5-436" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-437"><a href="#cb5-437" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 16. References</span></span>
 <span id="cb5-438"><a href="#cb5-438" aria-hidden="true" tabindex="-1"></a></span>
@@ -5698,16 +5702,16 @@ Note
 <span id="cb5-491"><a href="#cb5-491" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-492"><a href="#cb5-492" aria-hidden="true" tabindex="-1"></a>Before submitting your final report, check these things. Your work will receive a better grade if these things are done correctly.</span>
 <span id="cb5-493"><a href="#cb5-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-494"><a href="#cb5-494" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>There is a meaningful title (of no more than 80 characters, perhaps augmented by a subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for &quot;County Health Rankings&quot; throughout your work.</span>
-<span id="cb5-495"><a href="#cb5-495" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>You have used the section and subsection headings included in the  template, and the work shows 17 numbered sections.</span>
-<span id="cb5-496"><a href="#cb5-496" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Neither <span class="in">`#| include: FALSE`</span> nor <span class="in">`#| eval: FALSE`</span> is used in the project.</span>
+<span id="cb5-494"><a href="#cb5-494" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>There is a meaningful title (of no more than 80 characters, augmented by the 431 Project A subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for &quot;County Health Rankings&quot; throughout your work.</span>
+<span id="cb5-495"><a href="#cb5-495" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>You have used the section and subsection headings included in the template, and the work shows 17 numbered sections.</span>
+<span id="cb5-496"><a href="#cb5-496" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Neither <span class="in">`#| include: false`</span> nor <span class="in">`#| eval: false`</span> is used anywhere in the project. (Note that you&#39;ll have to delete lines included in the template to accomplish this.)</span>
 <span id="cb5-497"><a href="#cb5-497" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The option <span class="in">`knitr::opts_chunk$set(comment = NA)`</span> is set as part of your package loading, to ensure that R results in the HTML are not preceded with ##.</span>
 <span id="cb5-498"><a href="#cb5-498" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Either the option <span class="in">`theme_bw()`</span> or <span class="in">`theme_lucid()`</span> is used as part of your package loading, to ensure that your ggplot-based graphs are easy to view.</span>
 <span id="cb5-499"><a href="#cb5-499" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>All packages are loaded near the top of the document (as opposed to partway through) and <span class="in">`#| message: FALSE`</span> is used to suppress the messages created when loading packages.</span>
 <span id="cb5-500"><a href="#cb5-500" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>You have run spell check on your Quarto file (by hitting F7) before rendering it. You&#39;ll also want to check the headings and subheadings in your HTML to ensure there are no misspellings there.</span>
 <span id="cb5-501"><a href="#cb5-501" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>The raw data (prior to filtering rows and selecting variables) is not printed or summarized or listed in your HTML.</span>
-<span id="cb5-502"><a href="#cb5-502" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>The analytic tibble is saved to an <span class="in">`.Rds`</span> file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the <span class="in">`.Rds`</span> file to Canvas with your final report.</span>
-<span id="cb5-503"><a href="#cb5-503" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>The project demonstrates that all elements of data management are completed properly as part of Section 8.</span>
+<span id="cb5-502"><a href="#cb5-502" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>The project demonstrates that all elements of data management are completed properly as part of Section 8.</span>
+<span id="cb5-503"><a href="#cb5-503" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>The analytic tibble is saved to an <span class="in">`.Rds`</span> file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the <span class="in">`.Rds`</span> file to Canvas with your final report.</span>
 <span id="cb5-504"><a href="#cb5-504" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>There are no avoidable scrolling windows in the HTML document. Avoidable scrolling windows are those fixed by hitting ENTER more often in writing R code.</span>
 <span id="cb5-505"><a href="#cb5-505" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>All 17 sections listed in the template appear in your HTML and on your Table of Contents.</span>
 <span id="cb5-506"><a href="#cb5-506" aria-hidden="true" tabindex="-1"></a><span class="ss">13. </span>Professor Love’s instructions from the template are NOT repeated in your HTML.</span>

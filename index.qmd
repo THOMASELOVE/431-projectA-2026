@@ -50,12 +50,12 @@ Project A is about building relatively straightforward analyses and visualizing 
 ## General Project A Rules
 
 1. You can work alone, or with one other person on Project A.
-2. There is a required Project A Quarto template that you will use to build your Project A report. Details on the template are [found here](#the-project-a-template).
+2. There is a required [Project A Quarto template](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) that you will use to build your Project A report. Details on the template are [found here](#the-project-a-template).
 3. When you have problems on Project A, review these instructions and the other course materials, but also [ask us for help](https://thomaselove.github.io/431-2026/contact.html). Please don't punish yourself by waiting to talk with us.
-4. Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see [here](#section-16.-ai-usage-and-references)), so keep track of what you use.
+4. Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see [here](#section-15.-ai-usage)), so keep track of what you use.
 5. Be sure to use spell check (just hit F7) on your Quarto file before rendering it, and review the HTML result carefully to ensure that no residual warnings or error messages remain in the document before you submit your work. We've provided a [checklist for the report](#report-checklist-before-submission) which you should go through before you submit it.
 6. There should be no reference to statistical significance (or use of the word "significant") anywhere in your Project A. You should never use the notion of statistical significance in any context, ever^[We'll talk about this quite a bit in Class 11 in late September, for example.].
-7. Read the footnotes provided in these instructions^[I often hide very useful tips in the footnotes to encourage people to read the entire document carefully.]
+7. Read the footnotes provided in these instructions^[I often hide very useful tips in the footnotes to encourage people to read the entire document carefully.].
 
 ## Your Deliverables
 
@@ -65,7 +65,7 @@ Project A is about building relatively straightforward analyses and visualizing 
 
 - The main submission for Project A has four parts. These are due in mid-October on the date specified in the Course [Calendar](https://thomaselove.github.io/431-2026/calendar.html).
     1. Your project A master **data set**, saved as an .Rds file.
-    2. A detailed **report**, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template we have provided.
+    2. A detailed **report**, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template [we have provided](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd).
     3. A 3-minute recorded **video** presentation which highlights some key findings from your report (details can be [found here](#the-highlight-video)), and
     4. A **self-evaluation** form, which you'll complete after submitting the other three elements to Canvas. Details on the form [are found here](#the-self-evaluation).
     
@@ -119,7 +119,7 @@ Failing to do this carefully leads to most of the mistakes we expect to see in c
 
 ## Data Management Tasks
 
-Using the Quarto template for Project A, you will complete the following tasks.
+Using the [Quarto template for Project A](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) we provide on our [431-data page](https://github.com/THOMASELOVE/431-data), you will complete the following tasks.
 
 **Task A**. Ingest the data from each workbook (File 1 = main 4 states, File 2 = additional 8 states) properly into a separate tibble in R using tools from [the readxl package](https://readxl.tidyverse.org/), while accounting for missing values^[Remember that missingness is indicated in different ways in the two workbooks, and so you'll have to account for that in ingesting the data.]. 
 
@@ -164,8 +164,9 @@ sample(c("AR", "CO", "MI", "NE", "OR", "PA", "TN", "WA"), size = 2, replace = FA
 - Ensure that these values are in the order "Low", then "Mid", then "High" when you run `tabyl()` on the `cost_g` variable.
 
 **Task H**. Print the **projA_master** tibble by simply typing in its name. 
+
 - Verify that only 10 rows are printed.
-- The tibble should contain 18 variables: the original 16 plus the two (`cost_g` and `food_g`) that you created. 
+- The tibble should contain 15 variables: the original 14 plus the `cost_g` factor you created. 
 - The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the [appropriate number of rows](#file-2-other-eight-states) for the counties from your two selected states.)
 
 **Task I**. Use the `data_codebook()` function from the [datawizard package](https://easystats.github.io/datawizard/index.html) (part of the **easystats** meta-package) with two specific settings, as shown below:
@@ -183,8 +184,8 @@ Verify that your data meet all of the elements below, and **include a sentence o
 
 Make sure that your reader can use your `data_codebook()` results to see that:
 
-1. Your tibble contains the correct number of rows for your chosen states, and 18 columns
-2. You have missing values on exactly six of the 16 variables in `projA_master`:
+1. Your tibble contains the correct number of rows for your chosen states, and 15 columns
+2. You have missing values on exactly six of the 15 variables in `projA_master`:
     - `prev_b` and `prev_w` are each missing the same number of counties,
     - `lbw_new` and `lbw_old` are each missing the same (smaller) number of counties,
     - `child_m` and `firearm` each have missing observations,
@@ -329,14 +330,13 @@ Each of the report's 17 sections are described in detail in the [Project A Templ
 
 # The Project A Template
 
-There is a Project A template available on [our 431-data page](https://github.com/THOMASELOVE/431-data) as part of the **projectA** subfolder. It's called `431-projA-template-2026.qmd`. Please use this template to facilitate your progress, and help us evaluate your work quickly.
+There is a [Project A template](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) available on [our 431-data page](https://github.com/THOMASELOVE/431-data) as part of the **projectA** subfolder. It's called `431-projA-template-2026.qmd`. Please use this template to facilitate your progress, and help us evaluate your work quickly.
 
 ## The YAML code
 
-Leave the YAML code at the start of the template alone, other than changing your Title, Subtitle and Author information. 
+Leave the YAML code at the start of the template alone, other than changing your Title and Author information. 
 
-- If you like, you can select a different theme for the HTML document than the one (`pulse`) that we specified in the template. 
-- Options for [HTML theming in Quarto are shown here](https://quarto.org/docs/output-formats/html-themes.html).
+- If you like, you can select a different theme for the HTML document than the one (`pulse`) that we specified in the template. Options for [HTML theming in Quarto are shown here](https://quarto.org/docs/output-formats/html-themes.html).
 
 ## The Title
 
@@ -352,7 +352,7 @@ Your full name, and if you worked with a partner, both full names, are found in 
 
 ## Sections of the Template
 
-The Project A Report includes 17 sections:
+The Project A Report includes 17 sections, as described below. The [template]((https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) contains additional instructions, which should be **deleted** when you submit your final report to us.
 
 ### Section 1. R Packages
 
@@ -368,35 +368,35 @@ The use of other packages is up to you, and you may choose to source in the `Lov
 
 ### Section 2. Data Ingest
 
-This is where you'll do the work for [Data Management Task](#data-management-tasks) **A**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task A**.
 
 ### Section 3. Selecting States
 
-This is where you'll do the work for [Data Management Task](#data-management-task) **B**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task B**.
 
 ### Section 4. Create the Master Tibble
 
-This is where you'll do the work for [Data Management Tasks](#data-management-task) **C** and **D**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Tasks C** and **D**.
 
 ### Section 5. Manage Names and Types
 
-This is where you'll do the work for [Data Management Tasks](#data-management-task) **E** and **F**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Tasks E** and **F**.
 
 ### Section 6. Create a New Factor
 
-This is where you'll do the work for [Data Management Tasks](#data-management-task) **G**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task G**.
 
 ### Section 7. Printing the Tibble
 
-This is where you'll do the work for [Data Management Task](#data-management-tasks) **H**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task H**.
 
 ### Section 8. The Codebook
 
-This is where you'll do the work for [Data Management Task](#data-management-tasks) **I**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task I**.
 
 ### Section 9. Saving the Tibble
 
-This is where you'll do the work for [Data Management Task](#data-management-tasks) **J**.
+This is where you'll do the work for [Data Management](#data-management-tasks) **Task J**.
 
 ### Section 10. Comparison 1
 
@@ -428,7 +428,7 @@ Write two paragraphs (each containing at least four well-constructed complete En
 
 **In preparing this response, I made no use of AI outside of spell-check and code completion within RStudio.**
 
-- If you decide to get help from a large language model (like ChatGPT) to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.
+- If you decide to use a large language model to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.
 
 ### Section 16. References
 
@@ -485,16 +485,16 @@ Late work on Project A will be met with **harsh penalties**. Please plan ahead s
 
 Before submitting your final report, check these things. Your work will receive a better grade if these things are done correctly.
 
-1. There is a meaningful title (of no more than 80 characters, perhaps augmented by a subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for "County Health Rankings" throughout your work.
-2. You have used the section and subsection headings included in the  template, and the work shows 17 numbered sections.
-3. Neither `#| include: FALSE` nor `#| eval: FALSE` is used in the project.
+1. There is a meaningful title (of no more than 80 characters, augmented by the 431 Project A subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for "County Health Rankings" throughout your work.
+2. You have used the section and subsection headings included in the template, and the work shows 17 numbered sections.
+3. Neither `#| include: false` nor `#| eval: false` is used anywhere in the project. (Note that you'll have to delete lines included in the template to accomplish this.)
 4. The option `knitr::opts_chunk$set(comment = NA)` is set as part of your package loading, to ensure that R results in the HTML are not preceded with ##.
 5. Either the option `theme_bw()` or `theme_lucid()` is used as part of your package loading, to ensure that your ggplot-based graphs are easy to view.
 6. All packages are loaded near the top of the document (as opposed to partway through) and `#| message: FALSE` is used to suppress the messages created when loading packages.
 7. You have run spell check on your Quarto file (by hitting F7) before rendering it. You'll also want to check the headings and subheadings in your HTML to ensure there are no misspellings there.
 8. The raw data (prior to filtering rows and selecting variables) is not printed or summarized or listed in your HTML.
-9. The analytic tibble is saved to an `.Rds` file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the `.Rds` file to Canvas with your final report.
-10. The project demonstrates that all elements of data management are completed properly as part of Section 8.
+9. The project demonstrates that all elements of data management are completed properly as part of Section 8.
+10. The analytic tibble is saved to an `.Rds` file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the `.Rds` file to Canvas with your final report.
 11. There are no avoidable scrolling windows in the HTML document. Avoidable scrolling windows are those fixed by hitting ENTER more often in writing R code.
 12. All 17 sections listed in the template appear in your HTML and on your Table of Contents.
 13. Professor Love’s instructions from the template are NOT repeated in your HTML.
