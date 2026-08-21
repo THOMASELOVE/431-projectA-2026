@@ -1,0 +1,505 @@
+---
+title: "431 Project A Instructions for Fall 2026"
+author: "Thomas E. Love, Ph.D."
+date: last-modified
+format: 
+  html:
+    toc: true
+    number-sections: true
+    date-format: iso
+    embed-resources: true
+    code-overflow: wrap
+    code-tools: true
+    theme: zephyr
+---
+
+# What is Project A?
+
+Project A is the first of two data science projects you’ll be doing this semester. We’ve provided lots of guidance at the cost of only providing minimal flexibility. This allows us to delve into much more detail in our Project assessments than we could otherwise. 
+
+The main opportunities to think creatively in Project A fall in the areas of writing clearly and concisely, developing effective visualizations, and interpreting analytic results appropriately. You'll also need to make good choices about the most important things to show in a short presentation in order to communicate some highlights of your work well.
+
+In Project B, you'll have *some* more control over what you do and how you choose to do it, but not (perhaps) enough to suit everyone. The 432 projects are more flexible, as you'll see.
+
+## Learning Objectives
+
+It is hard to learn statistics (or anything else) passively; concurrent theory and application are essential^[Though by no means an original idea, this particular phrasing is stolen from Harry Roberts.].
+
+> "Statistics has no reason for existence except as the catalyst for investigation and discovery." [George E. P. Box](https://en.wikipedia.org/wiki/George_E._P._Box)
+
+I am primarily interested in your learning something interesting, useful and even valuable from your project experiences in 431. In particular, an effective Project A will demonstrate:
+
+1. The ability to create and formulate research questions that are statistically and scientifically appropriate.
+2. The ability to turn research questions into measures of interest.
+3. The ability to pull and merge and clean and tidy data, then present the data set following [Jeff Leek's guide to sharing data with a statistician](https://github.com/jtleek/datasharing).
+4. The ability to build a reasonable set of analyses, and assess their quality.
+5. The ability to identify and (with help) solve problems that crop up.
+6. The ability to comment on your work within code, and in written and oral presentation. You have to be able to *reason* about your findings, not just generate the code to solve the problem.
+7. The ability to build a Quarto-based report and to give a short presentation based on key findings from that report.
+
+## What You'll Be Doing
+
+Project A is about building relatively straightforward analyses and visualizing data from a (fairly clean) data set. Project A includes:
+
+- Sharing the process of ingesting, merging and tidying the data, with specific reference to the decisions you make to "clean" things up.
+- Descriptive and exploratory summaries of the data including, of course, attractive and well-constructed visualizations, including both graphs and tables.
+- Developing appropriate research questions that lead to the identification of smart measures for your analyses.
+- Comparisons of mean differences when comparing two paired samples, including appropriate evaluation of the assumptions behind the models you build, and description of inferential results.
+- Comparisons of mean differences for a quantitative outcome across a set of two independent groups, including appropriate evaluation of the assumptions behind the models you build, and description of inferential results.
+
+## General Project A Rules
+
+1. You can work alone, or with one other person on Project A.
+2. There is a required Project A Quarto template that you will use to build your Project A report. Details on the template are [found here](#the-project-a-template).
+3. When you have problems on Project A, review these instructions and the other course materials, but also [ask us for help](https://thomaselove.github.io/431-2026/contact.html). Please don't punish yourself by waiting to talk with us.
+4. Using generative AI in developing your Project A is tempting, but dangerous. You will have to disclose all of your AI usage as part of your Project A report (see [here](#section-16.-ai-usage-and-references)), so keep track of what you use.
+5. Be sure to use spell check (just hit F7) on your Quarto file before rendering it, and review the HTML result carefully to ensure that no residual warnings or error messages remain in the document before you submit your work. We've provided a [checklist for the report](#report-checklist-before-submission) which you should go through before you submit it.
+6. There should be no reference to statistical significance (or use of the word "significant") anywhere in your Project A. You should never use the notion of statistical significance in any context, ever^[We'll talk about this quite a bit in Class 11 in late September, for example.].
+7. Read the footnotes provided in these instructions^[I often hide very useful tips in the footnotes to encourage people to read the entire document carefully.]
+
+## Your Deliverables
+
+- As part of [Lab 4](https://github.com/THOMASELOVE/431-labs-2026/tree/main/lab4), due in late September, you will update us on your Project A progress. 
+    - This will require you to complete the "[Getting the Data](#getting-the-data)" and "[Managing the Data](#managing-the-data)" sections in these instructions.
+    - See [the Lab 4 instructions](https://github.com/THOMASELOVE/431-labs-2026/tree/main/lab4) for details.
+
+- The main submission for Project A has four parts. These are due in mid-October on the date specified in the Course [Calendar](https://thomaselove.github.io/431-2026/calendar.html).
+    1. Your project A master **data set**, saved as an .Rds file.
+    2. A detailed **report**, written in Quarto and rendered in HTML, which describes all of your work and follows a Quarto template we have provided.
+    3. A 3-minute recorded **video** presentation which highlights some key findings from your report (details can be [found here](#the-highlight-video)), and
+    4. A **self-evaluation** form, which you'll complete after submitting the other three elements to Canvas. Details on the form [are found here](#the-self-evaluation).
+    
+# Getting The Data
+
+For Project A, each of you will be working with data from the County Health Rankings project that we have curated for you. Our [431-data site](https://github.com/THOMASELOVE/431-data) includes a folder called **projectA**. In that folder, you should find two Excel workbooks containing County Health Rankings (CHR) project data. Each workbook includes a data tab and a corresponding variable codebook.
+
+To create your Project A data set in R, you will combine all counties from the first file with all counties from exactly two states from the second file. 
+
+## File 1: Main Four States
+
+- The first workbook is [`431_CHR_main4states_2026.xlsx`](https://github.com/THOMASELOVE/431-data/raw/refs/heads/main/data/project_A/431_CHR_main4states_2026.xlsx).
+- Total: 274 U.S. counties^[Each file excludes counties with population < 3,000 residents.]
+- States included, with county counts:
+    - California (57 counties), Florida (67), New York (62), and Ohio (88)
+
+## File 2: Other 8 States
+
+- The second workbook is [`431_CHR_other8states_2026.xlsx`](https://github.com/THOMASELOVE/431-data/raw/refs/heads/main/data/project_A/431_CHR_other8states_2026.xlsx)
+- Total: 511 U.S. counties (you will choose **only two** of these states)
+- Available states and county counts:
+    - Arkansas (75), Colorado (56), Michigan (82), Nebraska (65)
+    - Oregon (33), Pennsylvania (67), Tennessee (95), and Washington (38)
+
+## Variables
+
+The two workbooks describe the same variables, but **not** in identical ways. The Codebooks within each data file provide:
+
+- a variable name (each workbook contains 14 variables for each county)
+- a (more meaningful) short name (when cleaning the data in R, you'll change each variable's original name to this short name)
+- a County Health Rankings name of the variable, for use in getting additional information [here](https://www.countyhealthrankings.org/health-data/county-health-rankings-measures) 
+- a description from County Health Rankings, defining the variable
+    - Four variables (**v002**, **v037_now**, **v037_then** and **v124**) are defined differently in the two files. To successfully create your data, you must address these differences.
+- the name of the original data source
+- the years in which the data were gathered
+
+In addition, **missing** values are indicated differently in the two files:
+
+- In File 1 (main four states) the symbol `NA` indicates a missing value. There are 254 missing values across the variables in File 1.
+- In File 2 (other eight states) a blank cell indicates a missing value. There are 972 missing values across the variables in File 2.
+
+# Managing the Data
+
+:::{.callout-tip}
+
+Before doing anything in R, open the Excel workbooks and examine the two data sets and codebooks thoroughly, making note of the differences between the two files, including how the data are defined for each variable, and how missing values are indicated in each workbook.
+
+Failing to do this carefully leads to most of the mistakes we expect to see in completing the data management for Project A properly.
+
+:::
+
+## Data Management Tasks
+
+Using the Quarto template for Project A, you will complete the following tasks.
+
+**Task A**. Ingest the data from each workbook (File 1 = main 4 states, File 2 = additional 8 states) properly into a separate tibble in R using tools from [the readxl package](https://readxl.tidyverse.org/), while accounting for missing values^[Remember that missingness is indicated in different ways in the two workbooks, and so you'll have to account for that in ingesting the data.]. 
+
+- I encourage you to name these tibbles **projA_1** and **projA_2**, respectively. 
+
+**Task B**. Edit the R code below to choose two of the states from the eight available at random, selecting any positive integer (other than 431) and substituting it into the `set.seed()` function. Then filter the **projA_2** tibble to include all counties from only the two selected states.
+
+:::{.callout-note}
+
+As an example, a seed of 431 chooses Washington and Michigan.
+
+```{r}
+set.seed(431)
+sample(c("AR", "CO", "MI", "NE", "OR", "PA", "TN", "WA"), size = 2, replace = FALSE)
+```
+
+:::
+
+**Task C**. Convert all four variables^[v002, v037_now, v037_then and v124] in your **projA_2** tibble that present information differently than in the **projA_1** tibble, to the approach used in File 1 (and thus in the **projA_1** tibble.)
+
+- The Excel Codebooks provide this information^[Remember that percentages fall between 0 and 100, while proportions fall between 0 and 1. Also, pay particular attention to how categorical variables are coded.]
+- You'll provide R code to make the necessary changes to the variables in your **projA_2** tibble here.
+
+**Task D**. Combine the **projA_1** and **projA_2** tibbles appropriately to create a single master tibble including all counties for your selected six states. 
+
+- Name this tibble **projA_master**.
+
+**Task E**. Convert the names of the variables in **projA_master** to the short names listed in the Excel codebooks.
+
+- It makes it much easier for us to review your work if you stick to these names.
+
+**Task F**. Ensure that the variables are stored in R with the proper type. Specifically,
+
+- the `fips` and `county` variables should be stored as characters, and
+- the `state` and `water_v` variables should be stored as factors.
+
+**Task G**. Create a new factor variable, called `cost_g`, which is based on the `housing` variable, and which takes the following values:
+
+- `cost_g` is "Low" if the `housing` value is below 10,
+- `cost_g` is "Mid" if the `housing` value is between 10 and 15 (inclusive), and
+- `cost_g` is "High" is the `housing` value is above 15
+- Ensure that these values are in the order "Low", then "Mid", then "High" when you run `tabyl()` on the `cost_g` variable.
+
+**Task H**. Print the **projA_master** tibble by simply typing in its name. 
+- Verify that only 10 rows are printed.
+- The tibble should contain 18 variables: the original 16 plus the two (`cost_g` and `food_g`) that you created. 
+- The tibble should contain an appropriate number of rows, that match your expectations (274 rows for the four main counties, plus the [appropriate number of rows](#file-2-other-eight-states) for the counties from your two selected states.)
+
+**Task I**. Use the `data_codebook()` function from the [datawizard package](https://easystats.github.io/datawizard/index.html) (part of the **easystats** meta-package) with two specific settings, as shown below:
+
+```{r}
+#| eval: false
+data_codebook(projA_master, max_values = 7, range_at = 15)
+```
+
+Verify that your data meet all of the elements below, and **include a sentence or two** after the `data_codebook()` results that state (clearly, in your own words) that you have checked all of the elements of the data codebook listed here to ensure that your data are properly managed.
+
+:::{.callout-important}
+
+### Elements of `data_codebook()` to check
+
+Make sure that your reader can use your `data_codebook()` results to see that:
+
+1. Your tibble contains the correct number of rows for your chosen states, and 18 columns
+2. You have missing values on exactly six of the 16 variables in `projA_master`:
+    - `prev_b` and `prev_w` are each missing the same number of counties,
+    - `lbw_new` and `lbw_old` are each missing the same (smaller) number of counties,
+    - `child_m` and `firearm` each have missing observations,
+    - while all other variables contain data on all observations
+3. All of your planned outcome and quantitative predictor variables show a minimum and maximum value that make sense, in particular...
+    - all values of `poorfair` should be between 10 and 36
+    - all `prev` values (for either black or white) should be between 200 and 19,000
+    - all `lbw` values (new or old) should be between 3 and 18
+    - all `pop` values should be between 3,000 and 10,000,000
+    - all `water_v` values should be either Yes or No
+    - all `child_m` values should be between 15 and 170
+    - all `life_exp` values should be between 65 and 98
+    - all `firearm` values should be between 1 and 75
+    - all `housing` values should be between 1 and 35
+4. You have the right number of counties in each `state`, and that the only `state`s shown in your data are the six you have selected.
+5. Your new factor variable `cost_g` has the right number of counties in each category, and the categories appear in a sensible order, as we described when creating them.
+6. All of your variable Types are correct (character for `fipscode` and `county`, categorical for `state`, `water_v` and `cost_g`, and numeric for all others.)
+
+:::
+
+**Task J**. Save your **projA_master** tibble as an R data set with a name including your own, for example `projA_master_YOURNAME.Rds`. 
+
+- You will need to send us this file as part of your Project A submission.
+
+# Analyzing the Data
+
+You will complete four analyses (called comparisons in what follows) in Project A.
+
+> Think of a graph as a comparison. All graphs are comparisons (indeed, all statistical analyses are comparisons). If you already have the graph in mind, think of what comparisons it's enabling. Or if you haven't settled on the graph yet, think of what comparisons you'd like to make. [Andrew Gelman](http://andrewgelman.com/2014/03/25/statistical-graphics-course-statistical-graphics-advice/)
+
+:::{.callout-tip}
+
+## Developing Research Questions
+
+For comparisons 1-4, you will need to specify a research question at the start of the work.
+
+1. Start by describing what you want to study, and then specify a research question (which should end with a question mark and be something you can resolve with the planned analysis.) 
+2. Don’t boil the ocean here. You’re looking for a research question that can be reasonably addressed using your data, so it has to be pretty straightforward.
+3. Before you look at the data, develop a pre-existing belief about what will happen, and include a statement about that belief before specifying your question.
+4. A research question uses formal but clear language.
+5. Given your planned analyses, stay away from statements about cause and effect, and don’t use the words correlate or regression (in any form) in your research question.
+
+:::
+
+## Comparison 1
+
+Here, you will be exploring the distribution of life expectancy across your selected six states.
+
+a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on life expectancy, and specify the details on how this measure was obtained by the County Health Rankings, and what year it describes.
+
+b. Create an appropriate visualization to compare your six states in terms of the distribution of life expectancy. A good visualization will show the data effectively, and provide a clear sense of the center, spread and shape of the distributions. 
+
+:::{.callout-tip}
+## Advice for all Project A Visualizations
+
+Appropriate and meaningful titles, clear and detailed labels and the use of clear and clean graphical designs are all important in creating a proper visualization. Helpful use of color and legends are also worthy of your attention. 
+
+- Your graph's title (and/or subtitle) should describe briefly what the plot shows about the question of interest, instead of simply identifying the names of the variables and the type of plot that is shown.
+- It's also important to provide all necessary supporting information, including both the source of the data you're displaying and the time period when it was gathered. This is also relevant to any tables you present.
+- If you see especially unusual values in any visualization you generate for Project A, it would be useful to identify those counties, either in the plot itself as an annotation, or in the text describing the findings.
+- You will, of course, use the **ggplot2** package from the **tidyverse** to create all of your Project A visualizations.
+
+:::
+
+c. Follow your visualization with an attractive table which specifies for each state the number of counties displayed in your plot, along with the sample mean, standard deviation, median and interquartile range of life expectancy within that state, and then provide the overall results on these measures across all six states. Take the time to provide useful labels and attend to details in building an attractive, well-designed table.
+
+d. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings shown in your visualization and table, in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. 
+
+## Comparison 2
+
+Here, you will be exploring the association between firearm fatality rates and population across the counties with data in your selected six states.
+
+a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. As part of the paragraph, specify the number of counties which have complete data on the two measures of interest in this comparison.
+
+b. Build a scatterplot where both the y and x axes are shown as linear. Make sure your title (or subtitle) describes the nature of the association that you see.
+
+c. Then build a second scatterplot where the population axis is shown on a base-10 logarithmic scale^[The `scale_x_log10()` function will be useful.], adjusting any labels appropriately.
+
+d. Select your preference between the two scatterplots you built, and then build another version, this time faceting the scatterplot into six smaller ones, each showing one state (be sure the states are well labeled in the resulting plot.)
+
+e. Then write a paragraph (aim for at least four sentences) that adequately describes the key findings of your three visualizations, especially in light of your research question. Be sure to use proper English syntax and grammar, and write clearly about what you feel to be the most important results from your comparisons. 
+
+## Comparison 3
+
+Here, you will work with a paired samples design to compare means. You have the choice of either (1) comparing the white to black rates of preventable hospital stays or (2) comparing the old to new rates of low birth weight in the counties where data are available for your states.
+
+a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. 
+    - An example of a dull but moderately effective and minimally appropriate research question for Comparison 3 might be: *Are there meaningful differences in the mean of [outcome] for counties measured in [new time period] as compared to [old time period]?*
+
+b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.
+    - You'll need to focus on summarizing the paired differences. Select between (for example) "black - white" or "white - black" so that the sample mean is positive.
+    - As part of your summary, produce a three-plot figure using the patchwork package. Include a boxplot (with violin and the mean indicated), a histogram with a Normal curve, and a Normal Q-Q plot of the paired differences. Be sure to specify your bin width in an effective way for the histogram, and please remind us how many “pairs” of values you have to work with in your subtitle.
+    - Follow your figure with numerical summaries of the paired differences. The `lovedist()` function from the Course Book may be helpful.
+    - You will also need to provide some evidence on how well the “pairing” worked in this setting, by estimating and interpreting the Pearson correlation between the two sets of paired values.
+    - At the end of your summary, provide the code to obtain and a sentence where you specify the value for each component of your paired difference, and the paired difference itself, for Cuyahoga County, in Ohio, where CWRU is located.
+
+c. Build a 90% confidence interval for the population mean difference, first with (1) an ordinary least squares model to generate an appropriate t-based procedure, and then with (2) an appropriate bootstrap procedure.
+
+d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. 
+
+e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.
+
+f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 3.
+    - If you see problems with the assumptions behind your choice of interval, that would be a good thing to talk about here, for instance.
+    - If pairing didn’t “help” (in the sense that there was no substantial positive correlation between the samples), that would be worth discussing here.
+    - Another issue that is worth discussing is your target population, and what evidence you can describe that might indicate whether your selected states are a representative sample of the US as a whole, or perhaps some particular part of the United States.
+    - You should also provide at least one useful “next step” that you could take to improve this analysis (just saying “get more data” isn’t a sufficient next step.)
+
+## Comparison 4
+
+Here, you will work with an independent samples design to compare means. You have the choice of either (1) comparing the percentage of adults reporting poor or fair health between counties with Low vs. High levels of housing cost burden (while ignoring the counties with "Mid" levels of the `cost_g` variable), or (2) comparing child mortality between counties with and without drinking water violations for the counties where child mortality data are available.
+
+a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. 
+    - An example of a dull but moderately effective and minimally appropriate research question for Comparison 4 might be: *Are there meaningful differences in the mean of [outcome] for counties who [did have a drinking water violation in time period] and those which did not?* Use complete English sentences to identify your outcome and your predictor, describing what each variable means and its units of measurement. 
+
+b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.
+    - Here, prepare descriptive summaries of the data across the two predictor groups for your chosen outcome, including, of course, attractive and well-constructed visualizations which can be used for comparisons. A comparison boxplot with violins and means is an excellent option here for the key visualization. Be sure to label it carefully, and use color and/or fill wisely to create a clear and attractive picture.
+    - Provide a detailed set of numerical summaries of the outcome within each of the two groups, following your visualization. Again, the `lovedist()` function would be a good option.
+    - In describing your results, use "with a violation - without" or "High burden - Low burden", for the direction of the effect, please. This might be expected to lead to a positive sample mean difference, although that may not turn out to be the case.
+    - At the end of your summary, provide code to obtain and a sentence where you specify the values of your outcome and predictor for Cuyahoga County, in Ohio, where CWRU’s campus is located.
+
+c. Build a 90% confidence interval for the difference (either with violation - without or High burden - Low burden, please) in group means in two ways: (1) using an ordinary least squares model to produce a pooled-t procedure, and then (2) using a bootstrap procedure. 
+
+d. Select one of these two procedures to provide your final response, and discuss briefly (but in complete sentences) the reasons behind the choice you made. Show your work and your reasoning (not just your code), and comment on any analytic decisions you make. Be sure to actively present and justify any assumptions you are making. 
+
+e. Now write a paragraph which includes a clear restatement of your research question, followed by a clear and appropriate response to your research question, motivated by your results. Interpret your chosen 90% confidence interval’s point estimate, endpoints and width in context. You should also reflect on your pre-existing belief about what would happen in light of these results.
+
+f. Finally, write a paragraph which summarizes the key limitations of your work in Comparison 4, again following all of the relevant advice provided in part f of Comparison 3.
+
+# Completing the Report
+
+The materials discussed so far include the first 13 sections of the final Project A report (which will include 17 sections in total.)
+
+The remainder of the project report includes:
+
+- a [reflections section](#section-14.-reflection), 
+- information on [AI usage](#section-15.-ai-usage), 
+- a list of [references](#section-16.-references), and
+- [session information](#section-17.-session-information). 
+
+Each of the report's 17 sections are described in detail in the [Project A Template instructions](#the-project-a-template).
+
+# The Project A Template
+
+There is a Project A template available on [our 431-data page](https://github.com/THOMASELOVE/431-data) as part of the **projectA** subfolder. It's called `431-projA-template-2026.qmd`. Please use this template to facilitate your progress, and help us evaluate your work quickly.
+
+## The YAML code
+
+Leave the YAML code at the start of the template alone, other than changing your Title, Subtitle and Author information. 
+
+- If you like, you can select a different theme for the HTML document than the one (`pulse`) that we specified in the template. 
+- Options for [HTML theming in Quarto are shown here](https://quarto.org/docs/output-formats/html-themes.html).
+
+## The Title
+
+You need to come up with a meaningful title (containing at most 80 characters) for your work.
+
+1. You can use "CHR" as the abbreviation in your title for "County Health Rankings". 
+2. You should have a subtitle, and it should be "431 Project A". As a result, do not use the terms "Project" or "431" anywhere in your main title.
+3. Ideally, your title will focus on exactly one of the analyses you do, rather than all of them.
+
+## The Author(s)
+
+Your full name, and if you worked with a partner, both full names, are found in the author section of the Quarto (in the YAML) and appear legibly at the start of the HTML document.
+
+## Sections of the Template
+
+The Project A Report includes 17 sections:
+
+### Section 1. R Packages
+
+All necessary packages (and no unused packages) should be loaded at the start of the work, and all warnings or messages associated with that loading are suppressed in the HTML result.
+
+::: {.callout-note}
+
+It seems impossible to do this work without the `janitor`, `naniar`, `infer`, `xfun`, `patchwork`, `easystats` and `tidyverse` packages. Remember to load `easystats` and the `tidyverse` last. 
+
+The use of other packages is up to you, and you may choose to source in the `Love-431.R` script, too.
+
+:::
+
+### Section 2. Data Ingest
+
+This is where you'll do the work for [Data Management Task](#data-management-tasks) **A**.
+
+### Section 3. Selecting States
+
+This is where you'll do the work for [Data Management Task](#data-management-task) **B**.
+
+### Section 4. Create the Master Tibble
+
+This is where you'll do the work for [Data Management Tasks](#data-management-task) **C** and **D**.
+
+### Section 5. Manage Names and Types
+
+This is where you'll do the work for [Data Management Tasks](#data-management-task) **E** and **F**.
+
+### Section 6. Create a New Factor
+
+This is where you'll do the work for [Data Management Tasks](#data-management-task) **G**.
+
+### Section 7. Printing the Tibble
+
+This is where you'll do the work for [Data Management Task](#data-management-tasks) **H**.
+
+### Section 8. The Codebook
+
+This is where you'll do the work for [Data Management Task](#data-management-tasks) **I**.
+
+### Section 9. Saving the Tibble
+
+This is where you'll do the work for [Data Management Task](#data-management-tasks) **J**.
+
+### Section 10. Comparison 1
+
+This is where you'll do the work for [Comparison 1](#comparison-1).
+
+### Section 11. Comparison 2
+
+This is where you'll do the work for [Comparison 2](#comparison-2).
+
+### Section 12. Comparison 3
+
+This is where you'll do the work for [Comparison 3](#comparison-3).
+
+### Section 13. Comparison 4
+
+This is where you'll do the work for [Comparison 4](#comparison-4).
+
+### Section 14. Reflection
+
+Write two paragraphs (each containing at least four well-constructed complete English sentences) to answer the following questions:
+
+1. What was the most important thing you learned as a result of doing this project, and why?
+2. What was the most challenging (or difficult) part of completing the Project, and how you were able to overcome whatever it was that was most challenging. 
+    - Please be specific - a time management issue, for example, could be attributed to a lot of different things. Take the time to describe what happened and how you got past it in some detail.
+
+### Section 15. AI Usage
+
+- If you use no AI tools outside of the spell-checker and code completion tools within RStudio, please write that here, as follows:
+
+**In preparing this response, I made no use of AI outside of spell-check and code completion within RStudio.**
+
+- If you decide to get help from a large language model (like ChatGPT) to help with your phrasing of ideas, or building code, OK, but you need to describe what you did in some detail here. Use multiple clear and complete sentences.
+
+### Section 16. References
+
+All students should then have a list of references.
+
+This should include, at minimum, the County Health Rankings and Roadmaps site at <https://www.countyhealthrankings.org/>. Of course, you may also cite other publications in your listing. Use an appropriately professional approach to citation in this work.
+
+### Section 17. Session Information
+
+This section should indicate that a current version of R and R packages were used. Include the session information using the following R code:
+
+```{r}
+#| eval: false
+xfun::session_info()
+```
+
+# The Highlight Video
+
+Once your Project A report is complete, you will produce a video in `.mp4` format of no more than 3 minutes in length regardless of whether you are working alone or in a team.
+
+Producing a video often takes a full day of work after the project report is finished. Do not leave yourself without the opportunity to do good work on this.
+
+In this video, you will describe what you believe to be two of the most important findings from your work. One of these findings should come from either Comparison 1 or 2. The other finding should come from Comparison 3 or 4.
+
+- If you are working alone on the project, begin your presentation by introducing yourself and describing your sample (which states you used and specifying the two research questions you'll be addressing in your discussion.)
+- If you are working in a pair, each of you will present one of the two comparisons, either in two separate videos (which combined are no more than 3 minutes long) or (better) in one video. In either case, introduce yourself at the start of your portion of the video, and specify the states you used (even though you and your partner will be using the same states) and the research question you'll be addressing.
+- Do not discuss all four comparisons in the video - just show one from Comparison 1 or 2 and then one from Comparison 3 or 4.
+- Since you have only 3 minutes to present a highlight from each of two comparisons, you need to focus. Do not give a "play by play" of everything you did in the report. Focus on 1-2 key visualizations to amplify your conclusions for each analysis. 
+- Keeping the video under 3 minutes while giving us a clear understanding of what you found is the hard part.
+- All videos should include a clear statement of the research questions for the two comparisons you choose to present. Your video also needs to justify the responses to those questions with results from the analyses.
+- The video must stand on its own, in the sense that it must be completely understandable to someone who has not read your report, but who is generally familiar with County Health Rankings and its measurements. You need to tell us everything we need to know to evaluate your claims, and no more.
+- Your video must show your face at the start (so recording in Zoom is preferable) and then must share graphs and results taken from your report. Do not build new graphs or results that don't appear in your report.
+
+# The Self-Evaluation
+
+Once you have submitted the report, data and video for your project to Canvas, you will each (whether working alone or with a partner) submit [a brief self-evaluation via this Google Form](https://bit.ly/431-projectA-self-evaluation-2026). The form should take about 10 minutes to complete, and will open for submissions two weeks prior to the deadline.
+
+- If you're curious, the form asks you to address multiple issues related to the Project in multiple-choice questions. 
+- There are also two little essays that we'll ask for, which should be written independently from your partner (if you have one).
+    - You will summarize the key finding of your Project A study in your own well-chosen words (where your response should be in the neighborhood of 75 words, describing one key finding, which might come from any of your five comparisons.) 
+    - Also, you will tell us what the most important piece of advice is that you wished you'd heard when you began Project A (and we'd like at least 25 words here).
+
+# Submission Requirements
+
+All portfolio elements (R data set, Quarto and HTML report, video and self-evaluation) are due in mid-October at the time and date indicated on the [Course Calendar](https://thomaselove.github.io/431-2025/calendar.html). 
+
+- Submit the R data set, Quarto and HTML files and the video files all together to Canvas.
+- If you are working with a partner, one of you submits the R data set, Quarto, HTML and video files to Canvas, and the other partner submits a one-page note to Canvas stating who their partner is and that their partner will submit the materials for their project team. 
+- Everyone (including both members of each team) should fill out [the self-evaluation form](https://bit.ly/431-projectA-self-evaluation-2026) **after** all other materials are posted to Canvas.
+
+Late work on Project A will be met with **harsh penalties**. Please plan ahead so that you meet the deadline easily.
+
+## Report Checklist before Submission
+
+Before submitting your final report, check these things. Your work will receive a better grade if these things are done correctly.
+
+1. There is a meaningful title (of no more than 80 characters, perhaps augmented by a subtitle), set of authors (with full names) and date (in the format 2026-10-20) at the top of your HTML document. Use CHR as an abbreviation for "County Health Rankings" throughout your work.
+2. You have used the section and subsection headings included in the  template, and the work shows 17 numbered sections.
+3. Neither `#| include: FALSE` nor `#| eval: FALSE` is used in the project.
+4. The option `knitr::opts_chunk$set(comment = NA)` is set as part of your package loading, to ensure that R results in the HTML are not preceded with ##.
+5. Either the option `theme_bw()` or `theme_lucid()` is used as part of your package loading, to ensure that your ggplot-based graphs are easy to view.
+6. All packages are loaded near the top of the document (as opposed to partway through) and `#| message: FALSE` is used to suppress the messages created when loading packages.
+7. You have run spell check on your Quarto file (by hitting F7) before rendering it. You'll also want to check the headings and subheadings in your HTML to ensure there are no misspellings there.
+8. The raw data (prior to filtering rows and selecting variables) is not printed or summarized or listed in your HTML.
+9. The analytic tibble is saved to an `.Rds` file in Section 9 and that file to which it is saved contains only letters and numbers and in particular no spaces in its name. Note that you will submit the `.Rds` file to Canvas with your final report.
+10. The project demonstrates that all elements of data management are completed properly as part of Section 8.
+11. There are no avoidable scrolling windows in the HTML document. Avoidable scrolling windows are those fixed by hitting ENTER more often in writing R code.
+12. All 17 sections listed in the template appear in your HTML and on your Table of Contents.
+13. Professor Love’s instructions from the template are NOT repeated in your HTML.
+14. There are no warnings in the HTML document.
+
+# Questions?
+
+If you have questions after reading these instructions, please ask them using any of the approaches described on our [Contact Us page](https://thomaselove.github.io/431-2026/contact.html).

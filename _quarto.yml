@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "431 Project A: Fall 2026"
+  margin-header: |
+    ![](/cwru_logo_200.png)
+  margin-footer: |
+    ![](/431_logo_2026.png){width=70%}
+  page-footer: "Fall 2026: PQHS/CRSP/MPHP 431 at CWRU with Professor Love"
+  navbar:
+    background: "#09143A"
+    left:
+      - text: "Instructions"
+        href: index.qmd
+      - text: "431-Data page"
+        href: https://github.com/THOMASELOVE/431-data
+    right:
+      - text: "Contact Us"
+        href: contact.qmd
+      - text: "Main Course Page"
+        href: https://thomaselove.github.io/431-2026/
+        
+format:
+  html:
+    theme: 
+      light: litera
+      dark: cyborg
+    date-format: iso
+    toc: true
+    code-overflow: wrap
+    link-external-icon: true
+    link-external-newwindow: true
+
+editor: source
+
