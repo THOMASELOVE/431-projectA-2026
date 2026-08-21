@@ -360,7 +360,7 @@ All necessary packages (and no unused packages) should be loaded at the start of
 
 ::: {.callout-note}
 
-It seems impossible to do this work without the `janitor`, `naniar`, `infer`, `xfun`, `patchwork`, `easystats` and `tidyverse` packages. Remember to load `easystats` and the `tidyverse` last. 
+It seems impossible to do this work without the `janitor`, `naniar`, `xfun`, `patchwork`, `easystats` and `tidyverse` packages, along with either the `infer` or `MKinfer` packages^[I loaded `infer` in the template, but I encourage you to switch that to `MKinfer` if that's your preference.]. Remember to load `easystats` and the `tidyverse` last. 
 
 The use of other packages is up to you, and you may choose to source in the `Love-431.R` script, too.
 
