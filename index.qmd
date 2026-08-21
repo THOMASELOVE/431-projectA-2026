@@ -464,7 +464,7 @@ In this video, you will describe what you believe to be two of the most importan
 
 # The Self-Evaluation
 
-Once you have submitted the report, data and video for your project to Canvas, you will each (whether working alone or with a partner) submit [a brief self-evaluation via this Google Form](https://bit.ly/431-projectA-self-evaluation-2026). The form should take about 10 minutes to complete, and will open for submissions two weeks prior to the deadline.
+Once you have submitted the report, data and video for your project to Canvas, you will each (whether working alone or with a partner) submit [a brief self-evaluation via this Google Form](https://tinyurl.com/431-projectA-self-eval-2026). The form should take about 10 minutes to complete, and will open for submissions two weeks prior to the deadline.
 
 - If you're curious, the form asks you to address multiple issues related to the Project in multiple-choice questions. 
 - There are also two little essays that we'll ask for, which should be written independently from your partner (if you have one).
@@ -477,7 +477,7 @@ All portfolio elements (R data set, Quarto and HTML report, video and self-evalu
 
 - Submit the R data set, Quarto and HTML files and the video files all together to Canvas.
 - If you are working with a partner, one of you submits the R data set, Quarto, HTML and video files to Canvas, and the other partner submits a one-page note to Canvas stating who their partner is and that their partner will submit the materials for their project team. 
-- Everyone (including both members of each team) should fill out [the self-evaluation form](https://bit.ly/431-projectA-self-evaluation-2026) **after** all other materials are posted to Canvas.
+- Everyone (including both members of each team) should fill out [the self-evaluation form](https://tinyurl.com/431-projectA-self-eval-2026) **after** all other materials are posted to Canvas.
 
 Late work on Project A will be met with **harsh penalties**. Please plan ahead so that you meet the deadline easily.
 
