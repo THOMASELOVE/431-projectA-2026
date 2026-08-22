@@ -352,7 +352,7 @@ Your full name, and if you worked with a partner, both full names, are found in 
 
 ## Sections of the Template
 
-The Project A Report includes 17 sections, as described below. The [template]((https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) contains additional instructions, which should be **deleted** when you submit your final report to us.
+The Project A Report includes 17 sections, as described below. The [template](https://raw.githubusercontent.com/THOMASELOVE/431-data/refs/heads/main/data/project_A/431-projA-template-2026.qmd) contains additional instructions, which should be **deleted** when you submit your final report to us.
 
 ### Section 1. R Packages
 
