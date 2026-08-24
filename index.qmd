@@ -301,7 +301,7 @@ Here, you will work with an independent samples design to compare means. You hav
 a. Develop an appropriate research question, and include it as part of an introductory paragraph for this comparison. 
     - An example of a dull but moderately effective and minimally appropriate research question for Comparison 4 might be: *Are there meaningful differences in the mean of [outcome] for counties who [did have a drinking water violation in time period] and those which did not?* Use complete English sentences to identify your outcome and your predictor, describing what each variable means and its units of measurement. 
 
-b. Provide numerical summaries and visualizations of interest that are relevant to this analysis, and comment on any issues you observe.
+b. Provide numerical and visual summaries of interest that are relevant to this analysis, and comment on any issues you observe.
     - Here, prepare descriptive summaries of the data across the two predictor groups for your chosen outcome, including, of course, attractive and well-constructed visualizations which can be used for comparisons. A comparison boxplot with violins and means is an excellent option here for the key visualization. Be sure to label it carefully, and use color and/or fill wisely to create a clear and attractive picture.
     - Provide a detailed set of numerical summaries of the outcome within each of the two groups, following your visualization. Again, the `lovedist()` function would be a good option.
     - In describing your results, use "with a violation - without" or "High burden - Low burden", for the direction of the effect, please. This might be expected to lead to a positive sample mean difference, although that may not turn out to be the case.
